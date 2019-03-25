@@ -35,6 +35,7 @@
   (global-set-key (kbd "<f9>") 'elscreen-toggle)
   (global-set-key (kbd "C-.") 'elscreen-kill)
   (global-set-key (kbd "C-t") 'elscreen-next)
+  (global-set-key (kbd "C-S-t") 'elscreen-previous)
 
   (elscreen-start)
 
