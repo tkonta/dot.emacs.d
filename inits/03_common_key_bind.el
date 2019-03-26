@@ -2,7 +2,7 @@
 
 
 ;; "C-t" でフレームを切り替える初。期値はtranspose-chars
-(define-key global-map (kbd "C-S-t") 'other-frame)
+(define-key global-map (kbd "C-S-5") 'other-frame)
 
 ;; diredモード時のキープレフィックスを無効に
 (add-hook 'dired-mode-hook
