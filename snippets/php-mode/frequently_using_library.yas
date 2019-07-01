@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name:frequentlyUsingLibrary
+# key: uselib
+# --
+use Taraf\Commons\Domain\Code\Code;
+use Taraf\Commons\Domain\Date\YearMonth;
+use Illuminate\Support\Collection;
