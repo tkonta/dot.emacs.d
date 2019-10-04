@@ -24,8 +24,8 @@
   )
 
 
-(use-package git-gutter
+(use-package git-gutter+
   :config
-  (global-git-gutter-mode t)
+  (global-git-gutter+-mode)
 )
 
