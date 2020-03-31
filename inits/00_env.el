@@ -46,3 +46,16 @@
 
 ;; region
 (setenv "LANG" "en_US.UTF-8")
+
+;;; 右から左に読む言語に対応させないことで描画高速化
+(setq-default bidi-display-reordering nil)
+
+;;; 同じ内容を履歴に記録しないようにする
+(setq history-delete-duplicates t)
+
+;;; 現在行に色をつける
+;; (global-hl-line-mode 1)
+
+;;; モードラインに時刻を表示する
+(display-time)
+
