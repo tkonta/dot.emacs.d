@@ -1,8 +1,8 @@
 ;; カラー設定
 
-(use-package wombat-theme
+(use-package monokai-theme
   :config
-  (load-theme 'wombat t)
+  (load-theme 'monokai t)
 
   ;; ;; 透過
   ;; (defun set-alpha (alpha-num)
