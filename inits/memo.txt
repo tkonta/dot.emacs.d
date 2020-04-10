@@ -1,2 +1,8 @@
 ;;key-map
 (define-key global-map (kbd "C-c c") 'func-name)
+
+# using megemo
+brew install cmigemo --HEAD
+
+# using ag
+brew install the_silver_searcher
