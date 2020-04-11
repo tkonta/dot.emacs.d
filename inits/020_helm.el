@@ -64,6 +64,8 @@
 
 (use-package helm-ag
   :config
-  (setq helm-ag-base-command "/usr/local/bin/ag --nocolor --nogrou")
+  ;;ripgrepを使う設定 -Sは大文字小文字区別なし
+  (setq helm-ag-base-command "rg -S --vimgrep --no-heading")
+  ;;(setq helm-ag-base-command "/usr/local/bin/ag --nocolor --nogrou")
   (global-set-key (kbd "C-c s") 'helm-ag)
 )

@@ -6,3 +6,6 @@ brew install cmigemo --HEAD
 
 # using ag
 brew install the_silver_searcher
+
+# using ripgrep
+brew install ripgrep
