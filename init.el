@@ -1,7 +1,8 @@
-;; 何も考えず公式のREADMEからコピペすればいいコード
-;; straight.el自身のインストールと初期設定を行ってくれる
-(let ((bootstrap-file (concat user-emacs-directory "straight/repos/straight.el/bootstrap.el"))
-      (bootstrap-version 3))
+;; straight.el
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
@@ -11,8 +12,13 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; Users of Emacs versions >= 27 will want to add:
+(setq package-enable-at-startup nil)
+
 ;; use-packageをインストールする
 (straight-use-package 'use-package)
+(use-package el-patch
+  :straight t)
 
 ;; オプションなしで自動的にuse-packageをstraight.elにフォールバックする
 ;; 本来は (use-package hoge :straight t) のように書く必要がある
@@ -21,18 +27,18 @@
 ;; init-loaderをインストール&読み込み
 (use-package init-loader)
 
-
 ;;package 配布先
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
         ("melpa" . "http://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")))
+        ("org" . "http://orgmode.org/elpa/")
+        ))
 
 
-;;load package-list
-(package-refresh-contents)
+;;load package-list 初回は必ず必要
+;; (package-refresh-contents)
 ;; (when (not package-archive-contents)
-;;     (package-refresh-contents))
+;;   (package-refresh-contents))
 
 
 ;;ローカルパーッケージ置き場
@@ -42,16 +48,3 @@
 
 ;; ~/.emacs.d/init/ 以下のファイルを全部読み込む
 (init-loader-load "~/.emacs.d/inits")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

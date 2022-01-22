@@ -4,8 +4,13 @@
 (setq inhibit-startup-message t)
 
 ;;ツールバーとスクロールバーを消す
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+(if (display-graphic-p)
+    (progn
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)))
+
+;;メニューバーを消す
+(menu-bar-mode -1)
 
 ;;vbell off
 (setq visible-bell t)
@@ -35,7 +40,7 @@
 (show-paren-mode 1)
 
 ;;行末の空白をハイライト
-(setq-default show-trailing-whitespace t)
+(setq-default show-trailing-whitespace t) 
 
 ;; tab
 (setq-default tab-width 4)
@@ -54,8 +59,10 @@
 (setq history-delete-duplicates t)
 
 ;;; 現在行に色をつける
-;; (global-hl-line-mode 1)
+(global-hl-line-mode 0)
 
 ;;; モードラインに時刻を表示する
 (display-time)
 
+;;; シェルモードの起動
+(define-key global-map (kbd "C-z") 'shell)
