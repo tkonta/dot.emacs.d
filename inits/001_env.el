@@ -23,7 +23,7 @@
 (savehist-mode 1)
 
 ;; 行番号表示
-(global-linum-mode -1)
+(global-display-line-numbers-mode t)
 
 ;; ロックファイル / バックアップファイルを作成しない
 (setq create-lockfiles nil)
@@ -59,7 +59,7 @@
 (setq history-delete-duplicates t)
 
 ;;; 現在行に色をつける
-(global-hl-line-mode 0)
+;;(global-hl-line-mode 1)
 
 ;;; モードラインに時刻を表示する
 (display-time)
