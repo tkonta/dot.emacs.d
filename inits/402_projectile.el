@@ -9,12 +9,9 @@
   :config
 
   (projectile-global-mode)
-  (setq projectile-completion-system 'helm)
-
 )
 
 (use-package helm-projectile
   :init
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-  (helm-projectile-on)
 )

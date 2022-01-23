@@ -13,3 +13,5 @@ elisp-objects
 el-get
 bookmarks
 .cache
+transient
+.persistent-scratch

@@ -5,6 +5,10 @@
          ("M-g i" . dumb-jump-go-prompt)
          ("M-g x" . dumb-jump-go-prefer-external)
          ("M-g z" . dumb-jump-go-prefer-external-other-window))
-  :config (setq dumb-jump-selector 'helm) ;;(setq dumb-jump-selector 'ivy)
-  :ensure)
+  :config
+  (setq dumb-jump-selector 'vertico)
+  (setq dumb-jump-force-searcher 'rg)
+  (dumb-jump-mode 1)
+  :ensure
+  )
 

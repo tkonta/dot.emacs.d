@@ -17,4 +17,3 @@
   (delete-word (- arg)))
 
 (global-set-key (read-kbd-macro "M-h") 'delete-word)
-

@@ -8,5 +8,4 @@
   (setq recentf-exclude '(".recentf"))  ;; .recentf自体は含まない
 
   (recentf-mode 1)
-  (bind-key "C-c f" 'helm-recentf)
 )
