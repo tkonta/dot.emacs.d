@@ -5,7 +5,7 @@
 (global-set-key (kbd "M-]") 'switch-to-next-buffer)
 
 ;; 現在のバッファを閉じる
-(global-set-key (kbd "M-.") 'kill-this-buffer)
+;; (global-set-key (kbd "M-.") 'kill-this-buffer)
 
 ;; killのバッファーに入れないバージョン
 (defun delete-word (arg)

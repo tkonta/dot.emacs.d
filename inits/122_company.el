@@ -6,7 +6,7 @@
   (global-company-mode) ; 全バッファで有効にする
   (setq company-transformers '(company-sort-by-backend-importance)) ;; ソート順
   (setq company-idle-delay 0) ; デフォルトは0.5
-  (setq company-minimum-prefix-length 3) ; デフォルトは4
+  (setq company-minimum-prefix-length 2) ; デフォルトは4
   (setq company-selection-wrap-around t) ; 候補の一番下でさらに下に行こうとすると一番上に戻る
   (setq completion-ignore-case t)
   (setq company-dabbrev-downcase nil)

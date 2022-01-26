@@ -9,3 +9,8 @@ brew install the_silver_searcher
 
 # using ripgrep
 brew install ripgrep
+
+# for php-mode
+composer global require friendsofphp/php-cs-fixer:2.19.2
+composer global require laravel/framework:8.54 --with-all-dependencies
+composer global require nunomaduro/larastan:0.7.12 --with-all-dependencies

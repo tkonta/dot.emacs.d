@@ -1,14 +1,20 @@
-;; タグ生成とかしなくても、関数定義元へジャンプ出来る
+;; 構文エラーチェック
+
 (use-package flycheck
+  :ensure t
+  :hook (after-init . global-flycheck-mode)
   :config
-  ;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
-  ;; コード変更後、3秒後にチェックする
+  ;; コード変更後、1秒後にチェックする
   (setq flycheck-idle-change-delay 3)
-  ;; (global-set-key "\M-n" 'flycheck-next-error)
-  ;; (global-set-key "\M-p" 'flycheck-previous-error)
-  (define-key global-map (kbd "\C-cd") 'flycheck-list-errors)
 
+  :bind (:map flycheck-mode-map
+              ("M-n" . flycheck-next-error)
+              ("M-p" . flycheck-previous-error)))
 
+(use-package flycheck-color-mode-line
+  :ensure t
+  :config
+  (eval-after-load "flycheck"
+  '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
   )
-

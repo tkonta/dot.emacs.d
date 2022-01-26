@@ -35,3 +35,8 @@
   :config
   (global-git-gutter+-mode)
 )
+
+;; magitメモ
+;; 差分消し d k
+;; remote push F p
+
