@@ -25,15 +25,18 @@
 (use-package company-phpactor :ensure t)
 
 (use-package php-mode
-  :mode (("\\.php$" . php-mode)
-         ("\\.ctp$" . php-mode))
-  ;;
-  :hook ((php-mode . (lambda () (set (make-local-variable 'company-backends)
-       '(;; list of backends
-         company-phpactor
-         company-files
-         ))))
-         )
+  :straight (:host github :repo "emacs-php/php-mode")
+  :ensure t
+
+  :config
+  ;; (custom-set-variables '(php-imenu-generic-expression 'php-imenu-generic-expression-simple))
+
+  ;; :hook ((php-mode . (lambda () (set (make-local-variable 'company-backends)
+  ;;      '(;; list of backends
+  ;;        company-phpactor
+  ;;        company-files
+  ;;        ))))
+  ;;        )
   )
 
 (add-hook 'php-mode-hook
@@ -88,3 +91,10 @@
   :config
   (setq phpunit-configuration-file "phpunit.xml")
   (setq phpunit-root-directory (projectile-project-root)))
+
+
+(use-package php-auto-yasnippets
+  :ensure t
+  :after php-mode
+  :config
+  )

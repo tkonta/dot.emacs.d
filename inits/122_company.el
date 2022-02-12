@@ -2,7 +2,6 @@
 
 (use-package company
   :config
-  (require 'company)
   (global-company-mode) ; 全バッファで有効にする
   (setq company-transformers '(company-sort-by-backend-importance)) ;; ソート順
   (setq company-idle-delay 0) ; デフォルトは0.5

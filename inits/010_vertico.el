@@ -1,3 +1,5 @@
+;; ミニバッファを利用した絞り込みインターフェース
+
 (use-package vertico
   :init
   (vertico-mode)
